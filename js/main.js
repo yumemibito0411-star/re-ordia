@@ -2,7 +2,7 @@
   document.documentElement.classList.add('js');
 
   // Official LINE add-friend URL — replace with the real one (e.g. https://lin.ee/xxxxxxx)
-  const LINE_URL = '';
+  const LINE_URL = 'https://lin.ee/PXLjVZ7';
   if (LINE_URL) {
     document.querySelectorAll('[data-line-url]').forEach((a) => {
       a.href = LINE_URL;
