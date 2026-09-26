@@ -3,367 +3,389 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RE:ORDIA | Redefine Ordinary — 日常を再定義する美容イベント</title>
-  <meta name="description" content="RE:ORDIAは、真の美容を無理のない頻度と価格で日常に取り戻す、月1回開催の美容イベントです。会場はグランドプリンスホテル新高輪。フェイシャル・ボディトリートメントを初回50%OFFでご体験いただけます。">
-  <meta property="og:title" content="RE:ORDIA — 日常を再定義する美容イベント">
-  <meta property="og:description" content="真の美容を「特別なご褒美」から「自分を整える日常」へ。月1回・グランドプリンスホテル新高輪にて開催。">
+  <title>RE:ORDIA — Redefine Ordinary</title>
+  <meta name="description" content="RE:ORDIAは、真の美容を無理のない頻度と価格で日常に取り戻す、月に一度の美容イベント。グランドプリンスホテル新高輪にて。初回はフェイシャル・ボディが¥5,000。">
+  <meta property="og:title" content="RE:ORDIA — Redefine Ordinary">
+  <meta property="og:description" content="美容を、ご褒美から日常へ。月に一度、グランドプリンスホテル新高輪で。">
   <meta property="og:type" content="website">
   <meta property="og:image" content="images/ogp.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+JP:wght@300;400;500&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- ============ HEADER ============ -->
-<header class="header" id="top">
-  <a href="#top" class="header__logo" aria-label="RE:ORDIA トップへ">
-    <svg class="gem" viewBox="0 0 100 90" aria-hidden="true"><use href="#gem"/></svg>
-    <span>RE:ORDIA</span>
-  </a>
-  <nav class="header__nav" id="nav" aria-label="メインメニュー">
-    <a href="#concept">Concept</a>
-    <a href="#menu">Menu</a>
-    <a href="#course">Course</a>
-    <a href="#pricing">Price</a>
-    <a href="#overview">Access</a>
-    <a href="#flow">Flow</a>
-    <a href="#reserve" class="btn btn--gold btn--sm">ご予約</a>
-  </nav>
-  <button class="header__toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav">
-    <span></span><span></span>
-  </button>
-</header>
-
-<!-- SVG sprite -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="gem" viewBox="0 0 100 90">
     <path fill="currentColor" d="M20 0H38L30 26H4ZM42 0H58L64 26H36ZM62 0H80L96 26H70ZM4 32H30L47 84ZM36 32H64L50 80ZM70 32H96L53 84Z"/>
   </symbol>
+  <symbol id="line" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5 1.1-.5 5.9-3.5 8-6C21.4 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/>
+  </symbol>
 </svg>
+
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ================= HEADER ================= -->
+<header class="header" id="top">
+  <a href="#top" class="logo" aria-label="RE:ORDIA トップへ">
+    <svg class="logo__gem" viewBox="0 0 100 90" aria-hidden="true"><use href="#gem"/></svg>
+    <span>RE:ORDIA</span>
+  </a>
+  <div class="header__right">
+    <a href="https://lin.ee/PXLjVZ7" class="pill pill--dark" target="_blank" rel="noopener">Reserve</a>
+    <button class="burger" id="burger" aria-label="メニューを開く" aria-expanded="false" aria-controls="overlay">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="overlay" id="overlay" aria-label="メインメニュー">
+  <ol class="overlay__list">
+    <li><a href="#statement"><i>01</i>Concept<small>コンセプト</small></a></li>
+    <li><a href="#monthly"><i>02</i>Monthly<small>開催について</small></a></li>
+    <li><a href="#menu"><i>03</i>Menu<small>メニュー</small></a></li>
+    <li><a href="#privilege"><i>04</i>Privilege<small>特典</small></a></li>
+    <li><a href="#journey"><i>05</i>Course<small>コース</small></a></li>
+    <li><a href="#booking"><i>06</i>Booking<small>ご予約の流れ</small></a></li>
+  </ol>
+  <p class="overlay__foot">Grand Prince Hotel Shin Takanawa — Monthly</p>
+</nav>
 
 <main>
 
-<!-- ============ HERO ============ -->
+<!-- ================= HERO ================= -->
 <section class="hero">
-  <div class="hero__media ph" data-label="hero.jpg｜ChatGPTで生成">
-    <img src="images/hero.jpg" alt="" onerror="this.remove()">
-  </div>
-  <div class="hero__inner">
-    <svg class="gem gem--lg reveal" viewBox="0 0 100 90" aria-hidden="true"><use href="#gem"/></svg>
-    <p class="hero__eyebrow reveal">Redefine Ordinary</p>
-    <h1 class="hero__title reveal">RE:ORDIA</h1>
-    <p class="hero__lead reveal">真の美容を、<br class="sp">「特別なご褒美」から<br>「自分を整える日常」へ。</p>
-    <p class="hero__sub reveal">月に一度、グランドプリンスホテル新高輪で。<br>日常を再定義する美容イベント。</p>
-    <div class="hero__cta reveal">
-      <a href="#reserve" class="btn btn--gold">初回 50%OFF で予約する</a>
-      <a href="#menu" class="btn btn--ghost">メニューを見る</a>
-    </div>
-  </div>
-  <a href="#concept" class="hero__scroll" aria-label="下へスクロール">Scroll</a>
-</section>
+  <div class="orbs" aria-hidden="true"><span></span><span></span><span></span></div>
 
-<!-- ============ CONCEPT ============ -->
-<section class="section concept" id="concept">
-  <div class="container concept__grid">
-    <div class="concept__text">
-      <p class="eyebrow reveal">Concept</p>
-      <h2 class="section__title reveal">美の日常を、<br>再定義する。</h2>
-      <p class="reveal">多くの人が、間違った美容を日常に取り入れてしまっている今だからこそ。RE:ORDIAは真の美容を、無理のない頻度と価格で日常に取り戻していきます。</p>
-      <p class="reveal">同時に、美容アカデミーを卒業した美容家が、さらに技術を磨きながら本格美容をお客様に届けていく実践の場でもあります。</p>
-      <p class="reveal">美容の世界だけでなく、働き方や日々の過ごし方までも再定義しながら、次世代の挑戦を応援する。RE:ORDIAは、そんな想いを込めたイベントです。</p>
-      <p class="concept__quote reveal">一人ひとりの、美の日常を再定義する。</p>
-    </div>
-    <div class="concept__media ph reveal" data-label="concept.jpg｜ChatGPTで生成">
-      <img src="images/concept.jpg" alt="落ち着いた光の中でトリートメントを受ける女性" onerror="this.remove()" loading="lazy">
-    </div>
+  <p class="hero__kicker load">Monthly Beauty Event<br>at Grand Prince Hotel Shin Takanawa</p>
+
+  <h1 class="hero__title" aria-label="Redefine Ordinary">
+    <span class="hero__re load">Re<em>:</em>define</span>
+    <span class="hero__ordinary load" aria-hidden="true">Ordinary</span>
+  </h1>
+
+  <figure class="hero__arch ph load" data-label="hero-portrait.jpg ／ ChatGPT">
+    <img src="images/hero-portrait.jpg" alt="" onerror="this.remove()">
+  </figure>
+
+  <p class="hero__tate load" aria-hidden="true">美の日常を、再定義する。</p>
+
+  <div class="hero__bottom load">
+    <p class="hero__lead">美容を、<br>ご褒美から日常へ。</p>
+    <a href="#privilege" class="ticket-mini">
+      <span class="ticket-mini__label">First Visit</span>
+      <span class="ticket-mini__price"><s>¥10,000</s> ¥5,000</span>
+      <span class="ticket-mini__arrow">→</span>
+    </a>
   </div>
 </section>
 
-<!-- ============ MENU ============ -->
-<section class="section section--dark menu" id="menu">
-  <div class="container">
-    <p class="eyebrow reveal">Menu</p>
-    <h2 class="section__title reveal">コース内容</h2>
-    <p class="section__lead reveal">ご予約時は「フェイシャル」か「ボディ」をお選びいただくだけ。<br>担当美容家が当日カウンセリングのうえ、最適な施術プランをご案内します。</p>
-
-    <div class="menu__cats">
-      <article class="cat reveal">
-        <div class="cat__media ph" data-label="facial.jpg｜ChatGPTで生成">
-          <img src="images/facial.jpg" alt="フェイシャルトリートメントのイメージ" onerror="this.remove()" loading="lazy">
-        </div>
-        <div class="cat__body">
-          <p class="cat__en">Facial</p>
-          <h3>フェイシャル</h3>
-          <p>肌本来のコンディションを整える、フェイシャルトリートメント。</p>
-        </div>
-      </article>
-      <article class="cat reveal">
-        <div class="cat__media ph" data-label="body.jpg｜ChatGPTで生成">
-          <img src="images/body.jpg" alt="ボディトリートメントのイメージ" onerror="this.remove()" loading="lazy">
-        </div>
-        <div class="cat__body">
-          <p class="cat__en">Body</p>
-          <h3>ボディ</h3>
-          <p>心身の巡りを促す、ボディトリートメント。</p>
-        </div>
-      </article>
-    </div>
-
-    <!-- tabs -->
-    <div class="tabs reveal" role="tablist" aria-label="メニュー切り替え">
-      <button class="tabs__btn is-active" role="tab" aria-selected="true" aria-controls="panel-facial" id="tab-facial">Facial Menu</button>
-      <button class="tabs__btn" role="tab" aria-selected="false" aria-controls="panel-body" id="tab-body">Body Menu</button>
-    </div>
-
-    <div class="panel is-active" id="panel-facial" role="tabpanel" aria-labelledby="tab-facial">
-      <div class="plans">
-        <article class="plan">
-          <span class="badge">50%<br>OFF</span>
-          <h4>VIPプラン</h4>
-          <p class="plan__price">¥20,000</p>
-          <p class="plan__time">60分</p>
-          <ul><li>スペシャルエイジングプロダクト</li><li>ヘッドスパ</li><li>首肩デコルテ</li></ul>
-        </article>
-        <article class="plan">
-          <span class="badge">50%<br>OFF</span>
-          <h4>スタンダードプラン</h4>
-          <p class="plan__price">¥16,000</p>
-          <p class="plan__time">60分</p>
-          <ul><li>クレンジング／トリートメント</li><li>ヘッドスパ</li><li>超集中保湿</li></ul>
-        </article>
-        <article class="plan">
-          <span class="badge">50%<br>OFF</span>
-          <h4>ライトプラン</h4>
-          <p class="plan__price">¥8,000</p>
-          <p class="plan__time">60分</p>
-          <ul><li>クレンジング</li><li>トリートメント</li><li>パック</li></ul>
-        </article>
-      </div>
-      <article class="special">
-        <div class="special__head">
-          <p class="eyebrow eyebrow--gold">Special Menu</p>
-          <h4>パーソナライズプラン</h4>
-          <div class="tags"><span>初回体験</span><span>紹介特典</span></div>
-        </div>
-        <div class="special__price">
-          <p class="special__regular">通常価格 <s>¥10,000</s></p>
-          <p class="special__label">限定価格</p>
-          <p class="special__now">¥5,000<small>（90分）</small></p>
-        </div>
-        <p class="special__detail">クレンジング／トリートメント／最新IoT洗顔／アイマッサージ</p>
-      </article>
-    </div>
-
-    <div class="panel" id="panel-body" role="tabpanel" aria-labelledby="tab-body" hidden>
-      <div class="plans">
-        <article class="plan">
-          <span class="badge">50%<br>OFF</span>
-          <h4>VIPプラン</h4>
-          <p class="plan__price">¥20,000</p>
-          <p class="plan__time">60分</p>
-          <ul><li>上半身＋下半身</li><li>セラピスト2名施術</li></ul>
-        </article>
-        <article class="plan">
-          <span class="badge">50%<br>OFF</span>
-          <h4>スタンダードプラン</h4>
-          <p class="plan__price">¥16,000</p>
-          <p class="plan__time">60分</p>
-          <ul><li>痩身（上半身 or 下半身）</li><li>パーソナルカウンセリング</li><li>アンチエイジングプロダクト</li></ul>
-        </article>
-        <article class="plan">
-          <span class="badge">50%<br>OFF</span>
-          <h4>ライトプラン</h4>
-          <p class="plan__price">¥8,000</p>
-          <p class="plan__time">60分</p>
-          <ul><li>痩身（上半身 or 下半身）</li><li>パーソナルカウンセリング</li></ul>
-        </article>
-      </div>
-      <article class="special">
-        <div class="special__head">
-          <p class="eyebrow eyebrow--gold">Special Menu</p>
-          <h4>パーソナライズプラン</h4>
-          <div class="tags"><span>初回体験</span><span>紹介特典</span></div>
-        </div>
-        <div class="special__price">
-          <p class="special__regular">通常価格 <s>¥10,000</s></p>
-          <p class="special__label">限定価格</p>
-          <p class="special__now">¥5,000<small>（60分）</small></p>
-        </div>
-        <p class="special__detail">痩身（上半身 or 下半身）／パーソナルカウンセリング／ボディーパック／リンパマッサージ</p>
-      </article>
-    </div>
-
-    <p class="note">※ 各コースの具体的な工程・使用技術は当日スタッフが個別にご案内します。ご利用区分（特典）の適用有無は当日スタッフよりご案内します。</p>
+<!-- ================= MARQUEE ================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Redefine Ordinary</span><svg viewBox="0 0 100 90"><use href="#gem"/></svg>
+    <span>Facial</span><svg viewBox="0 0 100 90"><use href="#gem"/></svg>
+    <span>Body</span><svg viewBox="0 0 100 90"><use href="#gem"/></svg>
+    <span>Once a month</span><svg viewBox="0 0 100 90"><use href="#gem"/></svg>
+    <span>Redefine Ordinary</span><svg viewBox="0 0 100 90"><use href="#gem"/></svg>
+    <span>Facial</span><svg viewBox="0 0 100 90"><use href="#gem"/></svg>
+    <span>Body</span><svg viewBox="0 0 100 90"><use href="#gem"/></svg>
+    <span>Once a month</span><svg viewBox="0 0 100 90"><use href="#gem"/></svg>
   </div>
-</section>
+</div>
 
-<!-- ============ COURSE ============ -->
-<section class="section course" id="course">
-  <div class="container">
-    <p class="eyebrow reveal">Course Plan</p>
-    <h2 class="section__title reveal">続けるほど、美しく。</h2>
-    <p class="section__lead reveal">月に一度の積み重ねを、無理のない価格で。</p>
+<!-- ================= STATEMENT ================= -->
+<section class="statement" id="statement">
+  <p class="label"><i>01</i> Concept</p>
 
-    <article class="trial reveal">
-      <div class="trial__main">
-        <p class="eyebrow eyebrow--gold">Trial Course</p>
-        <h3>トライアルコース</h3>
-        <p class="trial__price">¥12,000<span>／3回チケット</span></p>
-      </div>
-      <dl class="trial__detail">
-        <div><dt>パーソナルプラン ×3</dt><dd>¥30,000</dd></div>
-        <div><dt>パーソナルカウンセリング ×3</dt><dd>¥18,000</dd></div>
-        <div class="trial__total"><dt>通常料金</dt><dd><s>¥48,000</s></dd></div>
-      </dl>
-    </article>
+  <p class="statement__big" data-words>
+    真の美容を、<br>
+    <span class="strike">「特別なご褒美」</span>から、<br>
+    <span class="gold">「自分を整える日常」</span>へ。
+  </p>
 
-    <div class="courses">
-      <article class="course-card reveal">
-        <p class="course-card__count">3<small>回</small></p>
-        <h3>スターターコース</h3>
-        <p class="course-card__desc">ライトプラン ×3 ＋ カウンセリング ×3</p>
-        <p class="course-card__regular">通常合計 <s>¥42,000</s></p>
-        <p class="course-card__price">¥15,000</p>
-      </article>
-      <article class="course-card reveal">
-        <p class="course-card__count">6<small>回</small></p>
-        <h3>ベーシックコース</h3>
-        <p class="course-card__desc">ライトプラン ×6 ＋ カウンセリング ×6</p>
-        <p class="course-card__regular">通常合計 <s>¥84,000</s></p>
-        <p class="course-card__price">¥30,000</p>
-      </article>
-      <article class="course-card course-card--featured reveal">
-        <p class="course-card__ribbon">Recommend</p>
-        <p class="course-card__count">9<small>回</small></p>
-        <h3>アドバンスコース</h3>
-        <p class="course-card__desc">パーソナルプラン ×9 ＋ カウンセリング ×9</p>
-        <p class="course-card__regular">通常合計 <s>¥144,000</s></p>
-        <p class="course-card__price">¥60,000</p>
-      </article>
-      <article class="course-card reveal">
-        <p class="course-card__count">12<small>回</small></p>
-        <h3>マスターコース</h3>
-        <p class="course-card__desc">パーソナルプラン ×12 ＋ カウンセリング ×12</p>
-        <p class="course-card__regular">通常合計 <s>¥192,000</s></p>
-        <p class="course-card__price">¥90,000</p>
-      </article>
-    </div>
-    <p class="note">※ 通常合計は各プラン単価の合算です。セット価格はコースとしてまとめてご購入いただく場合の金額です。</p>
-  </div>
-</section>
-
-<!-- ============ PRICING ============ -->
-<section class="section section--cream pricing" id="pricing">
-  <div class="container">
-    <p class="eyebrow reveal">Privilege</p>
-    <h2 class="section__title reveal">ご利用特典</h2>
-    <p class="section__lead reveal">通常価格 ¥10,000（税込）</p>
-
-    <div class="perks">
-      <article class="perk reveal">
-        <span class="perk__key">A</span>
-        <h3>新規特典</h3>
-        <p class="perk__price">¥5,000<small>50%OFF</small></p>
-        <p class="perk__cond">初回限定。他特典との併用不可</p>
-      </article>
-      <article class="perk reveal">
-        <span class="perk__key">B</span>
-        <h3>リピート特典</h3>
-        <p class="perk__price">¥8,000<small>2,000円OFF</small></p>
-        <p class="perk__cond">2回目以降のご利用が対象</p>
-      </article>
-      <article class="perk reveal">
-        <span class="perk__key">C</span>
-        <h3>紹介特典</h3>
-        <p class="perk__price">¥5,000<small>50%OFF</small></p>
-        <p class="perk__cond">ご紹介者名のご記入が必須</p>
-      </article>
-      <article class="perk reveal">
-        <span class="perk__key">D</span>
-        <h3>コース利用</h3>
-        <p class="perk__price perk__price--text">当日ご案内</p>
-        <p class="perk__cond">当日スタッフより個別にご案内</p>
-      </article>
+  <div class="statement__body">
+    <div class="collage">
+      <figure class="collage__a ph reveal" data-label="concept-1.jpg ／ ChatGPT">
+        <img src="images/concept-1.jpg" alt="柔らかな光の中で目を閉じる女性" onerror="this.remove()" loading="lazy">
+      </figure>
+      <figure class="collage__b ph reveal" data-label="concept-2.jpg ／ ChatGPT">
+        <img src="images/concept-2.jpg" alt="ゴールドのトレイに並ぶスキンケア" onerror="this.remove()" loading="lazy">
+      </figure>
+      <p class="collage__note reveal">Not a reward.<br>A ritual.</p>
     </div>
 
-    <div class="payment reveal">
-      <p class="payment__label">お支払い方法</p>
-      <p class="payment__value">PayPay ／ 現金</p>
+    <div class="statement__text">
+      <p class="reveal">多くの人が、間違った美容を日常に取り入れてしまっている今だからこそ。RE:ORDIAは真の美容を、無理のない頻度と価格で、日常に取り戻していきます。</p>
+      <p class="reveal">ここは、美容アカデミーを卒業した美容家たちが、技術を磨きながら本格美容を届ける実践の場。美容だけでなく、働き方や日々の過ごし方までも再定義しながら、次世代の挑戦を応援しています。</p>
+
+      <ul class="pillars">
+        <li class="reveal"><b>月に一度</b><span>無理のない<br>頻度で</span></li>
+        <li class="reveal"><b>¥5,000<small>〜</small></b><span>無理のない<br>価格で</span></li>
+        <li class="reveal"><b>本格美容</b><span>アカデミー卒の<br>美容家が担当</span></li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- ============ OVERVIEW ============ -->
-<section class="section overview" id="overview">
-  <div class="container overview__grid">
-    <div class="overview__media ph reveal" data-label="venue.jpg｜ChatGPTで生成">
-      <img src="images/venue.jpg" alt="ホテルのラグジュアリーな施術ルームのイメージ" onerror="this.remove()" loading="lazy">
-    </div>
-    <div>
-      <p class="eyebrow reveal">Event Overview</p>
-      <h2 class="section__title reveal">開催概要</h2>
-      <dl class="info reveal">
-        <div><dt>開催日程</dt><dd>毎月1回開催<br><span class="muted">開催日は公式LINEにて随時告知</span></dd></div>
-        <div><dt>会場</dt><dd>グランドプリンスホテル新高輪<br><span class="muted">東京都港区高輪3丁目13-1</span></dd></div>
-        <div><dt>ご予約</dt><dd>事前予約制<br><span class="muted">公式LINE内の予約フォームより</span></dd></div>
-        <div><dt>対応時間帯</dt><dd>
-          <table class="times">
-            <tr><th>女性</th><td>15:30〜16:30<br>17:00〜18:00</td></tr>
-            <tr><th>男性</th><td>18:30〜19:30</td></tr>
-          </table>
+<!-- ================= MONTHLY ================= -->
+<section class="monthly" id="monthly">
+  <div class="monthly__inner">
+    <p class="label label--light"><i>02</i> Monthly</p>
+    <h2 class="monthly__title reveal">月に一度、<br><em>自分に還る夜。</em></h2>
+
+    <div class="moons reveal" aria-hidden="true" id="moons"></div>
+
+    <div class="monthly__grid">
+      <figure class="monthly__img ph reveal" data-label="venue.jpg ／ ChatGPT">
+        <img src="images/venue.jpg" alt="ホテルの上質な空間のイメージ" onerror="this.remove()" loading="lazy">
+      </figure>
+
+      <dl class="facts">
+        <div class="reveal"><dt>Venue</dt><dd>グランドプリンスホテル新高輪<small>東京都港区高輪3-13-1 · <a href="https://www.google.com/maps/search/?api=1&query=%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%89%E3%83%97%E3%83%AA%E3%83%B3%E3%82%B9%E3%83%9B%E3%83%86%E3%83%AB%E6%96%B0%E9%AB%98%E8%BC%AA" target="_blank" rel="noopener">Map ↗</a></small></dd></div>
+        <div class="reveal"><dt>Date</dt><dd>毎月1回開催<small>開催日は公式LINEにて随時お知らせ</small></dd></div>
+        <div class="reveal"><dt>Time</dt><dd class="times">
+          <span><i>Women</i>15:30 – 16:30</span>
+          <span><i>Women</i>17:00 – 18:00</span>
+          <span><i>Men</i>18:30 – 19:30</span>
         </dd></div>
+        <div class="reveal"><dt>Booking</dt><dd>完全予約制<small>公式LINEの予約フォームから。満席の枠は選択できません。</small></dd></div>
       </dl>
-      <p class="note">※ ご予約希望日・性別・メニューにより選択できる時間帯が異なります（満席の枠は選択不可）。</p>
-      <a class="map-link reveal" href="https://www.google.com/maps/search/?api=1&query=%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%89%E3%83%97%E3%83%AA%E3%83%B3%E3%82%B9%E3%83%9B%E3%83%86%E3%83%AB%E6%96%B0%E9%AB%98%E8%BC%AA" target="_blank" rel="noopener">Google マップで見る →</a>
     </div>
   </div>
 </section>
 
-<!-- ============ FLOW ============ -->
-<section class="section section--dark flow" id="flow">
-  <div class="container">
-    <p class="eyebrow reveal">Flow</p>
-    <h2 class="section__title reveal">ご予約から当日まで</h2>
-    <ol class="steps">
-      <li class="step reveal"><span class="step__no">01</span><h3>公式LINE<br>友だち追加</h3><p>公式LINEを友だち追加し、メッセージを一度送信してください。</p></li>
-      <li class="step reveal"><span class="step__no">02</span><h3>予約フォームで<br>ご予約</h3><p>LINE内のフォームから日程・メニュー・ご利用区分を選択して送信。</p></li>
-      <li class="step reveal"><span class="step__no">03</span><h3>確認メッセージを<br>受信</h3><p>予約詳細・会場・キャンセルポリシーがLINEに自動で届きます。</p></li>
-      <li class="step reveal"><span class="step__no">04</span><h3>当日<br>ご来店</h3><p>開始5分前を目安にご来店ください。スタッフがご案内します。</p></li>
+<!-- ================= MENU ================= -->
+<section class="menu" id="menu">
+  <p class="label"><i>03</i> Menu</p>
+  <h2 class="h2 reveal">選ぶのは、<br>顔か、からだか。</h2>
+  <p class="menu__intro reveal">ご予約時はフェイシャルかボディを選ぶだけ。<br>当日、担当美容家がカウンセリングのうえ、あなたに合う施術をご提案します。</p>
+
+  <div class="split" role="tablist" aria-label="メニューの切り替え">
+    <button class="split__item is-active" role="tab" aria-selected="true" aria-controls="plans-facial" id="tab-facial">
+      <span class="split__img ph" data-label="facial.jpg ／ ChatGPT"><img src="images/facial.jpg" alt="" onerror="this.remove()" loading="lazy"></span>
+      <span class="split__txt"><em>Facial</em><b>フェイシャル</b><small>肌本来のコンディションを整える</small></span>
+    </button>
+    <button class="split__item" role="tab" aria-selected="false" aria-controls="plans-body" id="tab-body">
+      <span class="split__img ph" data-label="body.jpg ／ ChatGPT"><img src="images/body.jpg" alt="" onerror="this.remove()" loading="lazy"></span>
+      <span class="split__txt"><em>Body</em><b>ボディ</b><small>心身の巡りを促す</small></span>
+    </button>
+  </div>
+
+  <div class="plans" id="plans-facial" role="tabpanel" aria-labelledby="tab-facial">
+    <article class="row">
+      <h3 class="row__name"><em>VIP</em>VIPプラン</h3>
+      <p class="row__items">スペシャルエイジングプロダクト · ヘッドスパ · 首肩デコルテ</p>
+      <p class="row__time">60 min</p>
+      <p class="row__price">¥20,000</p>
+    </article>
+    <article class="row">
+      <h3 class="row__name"><em>Standard</em>スタンダードプラン</h3>
+      <p class="row__items">クレンジング／トリートメント · ヘッドスパ · 超集中保湿</p>
+      <p class="row__time">60 min</p>
+      <p class="row__price">¥16,000</p>
+    </article>
+    <article class="row">
+      <h3 class="row__name"><em>Light</em>ライトプラン</h3>
+      <p class="row__items">クレンジング · トリートメント · パック</p>
+      <p class="row__time">60 min</p>
+      <p class="row__price">¥8,000</p>
+    </article>
+    <article class="row row--special">
+      <h3 class="row__name"><em>Personalize</em>パーソナライズプラン<span class="chip">初回体験・紹介特典</span></h3>
+      <p class="row__items">クレンジング／トリートメント · 最新IoT洗顔 · アイマッサージ</p>
+      <p class="row__time">90 min</p>
+      <p class="row__price"><s>¥10,000</s>¥5,000</p>
+    </article>
+  </div>
+
+  <div class="plans" id="plans-body" role="tabpanel" aria-labelledby="tab-body" hidden>
+    <article class="row">
+      <h3 class="row__name"><em>VIP</em>VIPプラン</h3>
+      <p class="row__items">上半身＋下半身 · セラピスト2名施術</p>
+      <p class="row__time">60 min</p>
+      <p class="row__price">¥20,000</p>
+    </article>
+    <article class="row">
+      <h3 class="row__name"><em>Standard</em>スタンダードプラン</h3>
+      <p class="row__items">痩身（上半身 or 下半身） · パーソナルカウンセリング · アンチエイジングプロダクト</p>
+      <p class="row__time">60 min</p>
+      <p class="row__price">¥16,000</p>
+    </article>
+    <article class="row">
+      <h3 class="row__name"><em>Light</em>ライトプラン</h3>
+      <p class="row__items">痩身（上半身 or 下半身） · パーソナルカウンセリング</p>
+      <p class="row__time">60 min</p>
+      <p class="row__price">¥8,000</p>
+    </article>
+    <article class="row row--special">
+      <h3 class="row__name"><em>Personalize</em>パーソナライズプラン<span class="chip">初回体験・紹介特典</span></h3>
+      <p class="row__items">痩身（上半身 or 下半身） · パーソナルカウンセリング · ボディーパック · リンパマッサージ</p>
+      <p class="row__time">60 min</p>
+      <p class="row__price"><s>¥10,000</s>¥5,000</p>
+    </article>
+  </div>
+  <p class="fine">※ VIP・スタンダード・ライトは特典で50%OFFの対象です。具体的な工程・技術、特典の適用は当日スタッフよりご案内します。</p>
+</section>
+
+<!-- ================= PRIVILEGE ================= -->
+<section class="privilege" id="privilege">
+  <div class="orbs orbs--soft" aria-hidden="true"><span></span><span></span></div>
+  <p class="label"><i>04</i> Privilege</p>
+  <h2 class="h2 reveal">はじめての方は、<br><span class="gold">半額</span>から。</h2>
+
+  <div class="counter reveal">
+    <span class="counter__from">¥10,000</span>
+    <span class="counter__arrow" aria-hidden="true"></span>
+    <span class="counter__to">¥<b data-count="5000">5,000</b></span>
+  </div>
+
+  <div class="tickets">
+    <article class="ticket reveal">
+      <p class="ticket__key">A</p>
+      <div class="ticket__main">
+        <h3>新規特典</h3>
+        <p class="ticket__price">¥5,000<small>50% OFF</small></p>
+        <p class="ticket__cond">初回限定・他特典との併用不可</p>
+      </div>
+    </article>
+    <article class="ticket reveal">
+      <p class="ticket__key">B</p>
+      <div class="ticket__main">
+        <h3>リピート特典</h3>
+        <p class="ticket__price">¥8,000<small>¥2,000 OFF</small></p>
+        <p class="ticket__cond">2回目以降のご利用が対象</p>
+      </div>
+    </article>
+    <article class="ticket reveal">
+      <p class="ticket__key">C</p>
+      <div class="ticket__main">
+        <h3>紹介特典</h3>
+        <p class="ticket__price">¥5,000<small>50% OFF</small></p>
+        <p class="ticket__cond">ご紹介者名のご記入が必須</p>
+      </div>
+    </article>
+    <article class="ticket reveal">
+      <p class="ticket__key">D</p>
+      <div class="ticket__main">
+        <h3>コース利用</h3>
+        <p class="ticket__price ticket__price--jp">当日ご案内</p>
+        <p class="ticket__cond">スタッフより個別にご案内</p>
+      </div>
+    </article>
+  </div>
+  <p class="fine fine--center">通常価格 ¥10,000（税込）｜お支払いは PayPay または 現金</p>
+</section>
+
+<!-- ================= JOURNEY / COURSE ================= -->
+<section class="journey" id="journey">
+  <p class="label label--light"><i>05</i> Course</p>
+  <h2 class="h2 h2--light reveal">美しさは、<br><span class="gold">積み重ね</span>でできている。</h2>
+
+  <article class="trial reveal">
+    <div>
+      <p class="trial__tag">Trial — まずは3回</p>
+      <h3>トライアルコース</h3>
+      <p class="trial__detail">パーソナルプラン ×3 ＋ パーソナルカウンセリング ×3</p>
+    </div>
+    <p class="trial__price"><s>¥48,000</s>¥12,000</p>
+  </article>
+
+  <div class="path" id="path">
+    <div class="path__line"><span class="path__fill"></span></div>
+    <ol class="path__stops">
+      <li class="stop">
+        <p class="stop__n">3<small>回</small></p>
+        <h3>スターター</h3>
+        <p class="stop__d">ライトプラン＋カウンセリング ×3</p>
+        <p class="stop__p">¥15,000</p>
+        <p class="stop__save"><s>¥42,000</s> ¥27,000お得</p>
+      </li>
+      <li class="stop">
+        <p class="stop__n">6<small>回</small></p>
+        <h3>ベーシック</h3>
+        <p class="stop__d">ライトプラン＋カウンセリング ×6</p>
+        <p class="stop__p">¥30,000</p>
+        <p class="stop__save"><s>¥84,000</s> ¥54,000お得</p>
+      </li>
+      <li class="stop">
+        <p class="stop__n">9<small>回</small></p>
+        <h3>アドバンス</h3>
+        <p class="stop__d">パーソナルプラン＋カウンセリング ×9</p>
+        <p class="stop__p">¥60,000</p>
+        <p class="stop__save"><s>¥144,000</s> ¥84,000お得</p>
+      </li>
+      <li class="stop">
+        <p class="stop__n">12<small>回</small></p>
+        <h3>マスター</h3>
+        <p class="stop__d">パーソナルプラン＋カウンセリング ×12</p>
+        <p class="stop__p">¥90,000</p>
+        <p class="stop__save"><s>¥192,000</s> ¥102,000お得</p>
+      </li>
     </ol>
-    <p class="note">※ 予約完了画面に確認コードが表示された場合は、そのコードを公式LINEへ送信してください。スタッフよりご案内します。</p>
   </div>
+  <p class="fine fine--light">※ 通常合計は各プラン単価の合算。セット価格はコースとしてまとめてご購入いただく場合の金額です。</p>
 </section>
 
-<!-- ============ CANCEL ============ -->
-<section class="section cancel" id="cancel">
-  <div class="container container--narrow">
-    <p class="eyebrow reveal">Cancel Policy</p>
-    <h2 class="section__title reveal">キャンセルポリシー</h2>
-    <p class="reveal">ご予約のキャンセルは事前のご連絡で承ります。ご連絡は公式LINEにてお願いいたします。</p>
-    <div class="fees reveal">
-      <div class="fee"><p class="fee__when">3日前キャンセル</p><p class="fee__amount">¥5,000</p></div>
-      <div class="fee"><p class="fee__when">前日キャンセル</p><p class="fee__amount">¥10,000</p></div>
+<!-- ================= BOOKING (LINE chat) ================= -->
+<section class="booking" id="booking">
+  <div class="booking__text">
+    <p class="label"><i>06</i> Booking</p>
+    <h2 class="h2 reveal">ご予約は、<br>LINEでひと息に。</h2>
+    <ol class="steps">
+      <li class="reveal"><b>01</b>公式LINEを友だち追加し、メッセージを一度送信</li>
+      <li class="reveal"><b>02</b>予約フォームで日程・メニュー・特典区分を選択</li>
+      <li class="reveal"><b>03</b>予約詳細・会場・キャンセルポリシーがLINEに届く</li>
+      <li class="reveal"><b>04</b>当日は開始5分前を目安にご来店</li>
+    </ol>
+    <a href="https://lin.ee/PXLjVZ7" class="btn-line" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#line"/></svg>公式LINEで予約する
+    </a>
+  </div>
+
+  <div class="phone reveal" aria-hidden="true">
+    <div class="phone__bar"><span class="phone__avatar"><svg viewBox="0 0 100 90"><use href="#gem"/></svg></span>RE:ORDIA</div>
+    <div class="chat" id="chat">
+      <p class="bubble bubble--me">予約したいです</p>
+      <p class="bubble">友だち追加ありがとうございます✨<br>こちらのフォームからご予約ください。</p>
+      <div class="bubble bubble--card">
+        <b>予約フォーム</b>
+        <span>日程 ／ メニュー ／ 特典区分</span>
+        <i>フェイシャル · 17:00 – 18:00 · 新規特典</i>
+      </div>
+      <p class="bubble">ご予約を承りました。<br>当日、会場でお待ちしております。</p>
+      <p class="bubble bubble--me">楽しみです！</p>
     </div>
-    <p class="note">※ 3日前より上記規定のキャンセル料が発生いたしますので、ご注意ください。</p>
   </div>
 </section>
 
-<!-- ============ RESERVE CTA ============ -->
-<section class="reserve" id="reserve">
-  <div class="reserve__media ph" data-label="cta-bg.jpg｜Canvaで作成">
-    <img src="images/cta-bg.jpg" alt="" onerror="this.remove()" loading="lazy">
+<!-- ================= CANCEL ================= -->
+<section class="cancel">
+  <h2 class="cancel__title">Cancel Policy</h2>
+  <div class="timeline" role="img" aria-label="3日前のキャンセルは5,000円、前日のキャンセルは10,000円">
+    <div class="timeline__seg timeline__seg--free"><span>4日前まで</span><b>無料</b></div>
+    <div class="timeline__seg"><span>3日前</span><b>¥5,000</b></div>
+    <div class="timeline__seg timeline__seg--hi"><span>前日</span><b>¥10,000</b></div>
+    <div class="timeline__day"><span>当日</span><svg viewBox="0 0 100 90"><use href="#gem"/></svg></div>
   </div>
-  <div class="reserve__inner">
-    <svg class="gem" viewBox="0 0 100 90" aria-hidden="true"><use href="#gem"/></svg>
-    <h2 class="reveal">あなたの日常を、<br class="sp">再定義しよう。</h2>
-    <p class="reveal">当日お会いできることを、スタッフ一同楽しみにしております。</p>
-    <a href="https://lin.ee/PXLjVZ7" class="btn btn--line reveal" target="_blank" rel="noopener" data-line-url>
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5 1.1-.5 5.9-3.5 8-6C21.4 14.3 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>
-      公式LINEで予約する
+  <p class="fine fine--center">キャンセルのご連絡は公式LINEにて承ります。</p>
+</section>
+
+<!-- ================= FINALE ================= -->
+<section class="finale">
+  <figure class="finale__bg ph" data-label="finale.jpg ／ Canva">
+    <img src="images/finale.jpg" alt="" onerror="this.remove()" loading="lazy">
+  </figure>
+  <div class="finale__inner">
+    <p class="finale__small reveal">See you at</p>
+    <p class="finale__big reveal">RE:ORDIA</p>
+    <p class="finale__jp reveal">あなたの日常を、再定義しに。</p>
+    <a href="https://lin.ee/PXLjVZ7" class="btn-line btn-line--lg reveal" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#line"/></svg>公式LINEで予約する
     </a>
   </div>
 </section>
@@ -371,15 +393,15 @@
 </main>
 
 <footer class="footer">
-  <a href="#top" class="footer__logo">
-    <svg class="gem" viewBox="0 0 100 90" aria-hidden="true"><use href="#gem"/></svg>
-    RE:ORDIA
-  </a>
-  <p class="footer__tag">Redefine Ordinary — 日常を再定義する美容イベント</p>
-  <p class="footer__copy"><small>&copy; RE:ORDIA</small></p>
+  <a href="#top" class="logo logo--light"><svg class="logo__gem" viewBox="0 0 100 90" aria-hidden="true"><use href="#gem"/></svg><span>RE:ORDIA</span></a>
+  <p>Redefine Ordinary — 日常を再定義する美容イベント</p>
+  <p class="footer__addr">グランドプリンスホテル新高輪｜東京都港区高輪3-13-1</p>
+  <small>&copy; RE:ORDIA</small>
 </footer>
 
-<a href="#reserve" class="float-cta" id="floatCta">初回50%OFFで予約</a>
+<a href="https://lin.ee/PXLjVZ7" class="sticky-cta" id="stickyCta" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#line"/></svg>初回 ¥5,000 で予約
+</a>
 
 <script src="js/main.js"></script>
 </body>

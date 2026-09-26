@@ -1,100 +1,126 @@
 # RE:ORDIA 画像制作ガイド（ChatGPT / Canva）
 
-サイトは画像がなくても表示できるよう、各画像枠に仮のグラデーション＋ファイル名ラベルを表示しています。
-下記の画像を作成し、`images/` フォルダに **指定のファイル名** で置くと自動で差し替わります。
+サイトは画像がなくても成立するよう、各画像枠に仮のグラデーションとファイル名ラベル（右上）を出しています。
+下記の画像を作り、`images/` フォルダに **指定のファイル名** で置くと自動で差し替わります。
 
-## 共通トーン（全画像に適用）
+## アートディレクション
 
-- カラー：エスプレッソブラウン `#2A201C`／アンティークゴールド `#B08D57`／クリーム `#F8F4EE`／くすみローズ `#C99A86`
-- 雰囲気：ラグジュアリーホテル、静けさ、上品、温かい間接照明、低彩度、フィルム調
-- NG：派手な色、白飛び、ロゴや文字の写り込み、過度な肌の加工
+テーマは **「ご褒美ではなく、日常の儀式（Not a reward. A ritual.）」**。
+いかにもエステのパンフレットのような「白いタオル＋笑顔」ではなく、ファッション誌の美容ページのような写真を目指します。
+
+- **光**：夕方の窓辺の光、キャンドルのような暖色、強い影。フィルムカメラの粒子感
+- **色**：アイボリー `#F6F0E8`／ブラッシュ `#ECD3C8`／シャンパンゴールド `#E6CFA3`／エスプレッソ `#221A16`
+- **構図**：寄りのクロップ（肌・手・首すじ）、余白たっぷり、顔は写しすぎない
+- **NG**：文字やロゴの写り込み、青白い照明、過度な肌のレタッチ、露出の多いボディ表現
+
+## 画像一覧と置き場所
+
+| ファイル名 | 使う場所 | 形 | 作るツール |
+|---|---|---|---|
+| `hero-portrait.jpg` | トップのアーチ型の写真 | 縦 3:4 | ChatGPT |
+| `concept-1.jpg` | コンセプトのアーチ | 縦 3:4 | ChatGPT |
+| `concept-2.jpg` | コンセプトの丸 | 正方形 | ChatGPT |
+| `venue.jpg` | 開催概要の丸（月のイメージ） | 正方形 | ChatGPT |
+| `facial.jpg` | メニューのフェイシャルパネル | 横 3:2 | ChatGPT |
+| `body.jpg` | メニューのボディパネル | 横 3:2 | ChatGPT |
+| `finale.jpg` | 最後の予約セクション背景 | 横 16:9 | Canva |
+| `ogp.jpg` | SNSでシェアされた時の画像 | 1200×630 | Canva |
 
 ---
 
-## ChatGPT（画像生成）で作る写真
+## ChatGPT で作る写真
 
-ChatGPTにそのまま貼り付けてください。日本語でも通じますが、英語の方が安定します。
+ChatGPTにそのまま貼り付けてください（英語の方が安定します）。
+**最初に「共通スタイル」を送ってから**各プロンプトを送ると、全体の統一感が出ます。
 
-### 1. `hero.jpg`（ファーストビュー背景）— 横長 3:2 / 2400×1600px 以上
-
-```
-A luxurious, calm hotel spa treatment room at dusk, warm indirect golden lighting,
-dark espresso-brown wood walls, cream linen on a treatment bed, a small brass tray
-with skincare bottles, soft bokeh, cinematic, editorial beauty photography,
-muted low-saturation palette of espresso brown, antique gold and cream,
-lots of negative space in the center for text overlay, no people, no text, no logos.
-Aspect ratio 3:2, photorealistic.
-```
-
-### 2. `concept.jpg`（コンセプト）— 縦長 4:5 / 1200×1500px 以上
+### 共通スタイル（最初に1回送る）
 
 ```
-Close-up portrait of a Japanese woman in her 30s with eyes closed, receiving a gentle
-facial treatment, natural healthy skin, serene expression, warm golden side light,
-dark brown background, cream towel, elegant and quiet mood, editorial beauty
-photography, muted espresso-brown / antique-gold / cream color palette,
-no text, no logos. Aspect ratio 4:5, photorealistic.
+これから美容イベント「RE:ORDIA」のWebサイト用写真を数枚作ります。
+全て以下のスタイルで統一してください：
+Editorial beauty photography for a luxury magazine. Warm late-afternoon window light,
+soft film grain, shallow depth of field. Colour palette strictly limited to ivory,
+blush pink, champagne gold and deep espresso brown. Calm, intimate, quiet luxury.
+No text, no logos, no watermarks.
 ```
 
-### 3. `facial.jpg`（フェイシャルメニュー）— 横長 16:10 / 1600×1000px 以上
+### 1. `hero-portrait.jpg` — 縦 3:4
 
 ```
-Aesthetician's hands applying cream to a woman's cheek during a luxury facial
-treatment, top-down angle, soft warm lighting, cream towel, gold-toned skincare
-jars nearby, dark espresso-brown surroundings, calm and premium mood, shallow depth
-of field, muted brown/gold/cream palette, no text, no logos. Aspect ratio 16:10.
+Close-up side profile of a Japanese woman in her 30s with eyes gently closed,
+bare dewy skin, hair loosely tied back, a single ray of warm golden sunlight
+falling across her cheek and neck, blush-toned background softly out of focus.
+Serene, confident, not smiling. Portrait orientation 3:4.
 ```
 
-### 4. `body.jpg`（ボディメニュー）— 横長 16:10 / 1600×1000px 以上
+### 2. `concept-1.jpg` — 縦 3:4
 
 ```
-Luxury body treatment scene: a therapist's hands performing a lymphatic massage on a
-woman's back and shoulders, draped with a cream towel, warm dim golden lighting,
-dark brown wooden interior, polished and tasteful, not revealing, editorial spa
-photography, muted brown/gold/cream palette, no text, no logos. Aspect ratio 16:10.
+A woman's hand resting lightly on her collarbone, cream silk robe slipping off the
+shoulder, warm light and soft shadows of window blinds across the skin,
+ivory and blush tones. Intimate but elegant, face cropped out. Portrait 3:4.
 ```
 
-### 5. `venue.jpg`（開催概要）— 縦長 4:5 / 1200×1500px 以上
+### 3. `concept-2.jpg` — 正方形
 
 ```
-Elegant Japanese luxury hotel lobby or banquet corridor with warm chandelier light,
-carpet and wood panelling in espresso brown and antique gold, a vase of white flowers,
-calm and upscale atmosphere, architectural interior photography, low saturation,
-no people, no text, no logos. Aspect ratio 4:5, photorealistic.
+Still life: a small brushed-gold tray holding two amber glass skincare bottles and
+a folded ivory towel, on warm travertine stone, hard afternoon shadow,
+a sprig of dried pampas grass. Top-down, minimal. Square 1:1.
 ```
 
-> ※ 実在ホテル（グランドプリンスホテル新高輪）の写真を使う場合は、ホテル側の使用許諾を得たものを使用してください。生成画像は「イメージ」として扱い、実物と誤認させない表現にしてください。
+### 4. `venue.jpg` — 正方形（丸く切り抜かれ「月」に見立てます）
+
+```
+Looking up at a glowing round paper lantern or dome light in a dark, luxurious
+hotel interior, warm champagne glow fading into deep espresso-brown darkness,
+the light source centred like a full moon. Square 1:1.
+```
+
+### 5. `facial.jpg` — 横 3:2
+
+```
+An aesthetician's fingertips gently pressing on a woman's cheekbone during a
+facial treatment, extreme close-up, glossy skin with a light cream texture,
+warm golden light, blush and ivory tones. Landscape 3:2.
+```
+
+### 6. `body.jpg` — 横 3:2
+
+```
+A therapist's hands performing a slow lymphatic massage along a woman's shoulder
+blade, draped in an ivory towel, warm dim light, subtle sheen of oil on skin,
+tasteful and non-revealing. Landscape 3:2.
+```
+
+> 生成画像は「イメージ」として使ってください。実在ホテルの写真を使う場合は、ホテルの使用許諾が必要です。
 
 ---
 
 ## Canva で作るもの
 
-### 6. `cta-bg.jpg`（予約セクション背景）— 2400×1200px
+### 7. `finale.jpg`（最後の予約セクション背景）— 1920×1080
 
-1. Canvaで「カスタムサイズ 2400×1200」を作成
-2. 背景色 `#2A201C` を敷き、ChatGPTで作った `hero.jpg` または `concept.jpg` を配置して透明度 40% 程度に
-3. 「ゴールド 箔 テクスチャ」系の素材を左下・右上に薄く（透明度 20〜30%）重ねる
-4. **文字は入れない**（サイト側でテキストを重ねるため）
-5. JPG・画質80でダウンロード
+1. Canvaで「カスタムサイズ 1920×1080」を作成
+2. 背景にグラデーション（中央 `#6D4D3A` → 外側 `#1B1411`）
+3. ChatGPTで作った `hero-portrait.jpg` を全面に配置し、透明度 35% ＋「ぼかし」強め
+4. 素材検索「gold foil texture」「light leak」を画面の端に薄く（透明度 20% 前後）重ねる
+5. **文字は入れない**（サイト側で「See you at RE:ORDIA」を重ねるため）
+6. JPG・画質80でダウンロード
 
-### 7. `ogp.jpg`（SNSシェア用画像）— 1200×630px
+### 8. `ogp.jpg`（SNSシェア用）— 1200×630
 
 1. Canvaで「カスタムサイズ 1200×630」を作成
-2. 背景色 `#2A201C`
-3. 中央に ダイヤモンドのアイコン（色 `#B08D57`）
-4. その下に `RE:ORDIA`（フォント例：Cormorant Garamond / 色 `#F8F4EE` / 字間広め）
-5. サブコピー `Redefine Ordinary — 日常を再定義する美容イベント`（フォント例：しっぽり明朝 / 色 `#C99A86`）
-6. 下部に細いゴールドのライン
-   ※ 資料1ページ目の表紙をそのまま横長にしたイメージです
-
-### 8. （任意）ロゴデータ
-
-サイトのダイヤモンドアイコンはSVGで仮作成しています。正式なロゴデータがCanvaにある場合は
-SVGまたは透過PNGで書き出して共有いただければ差し替えます。
+2. 背景 `#F6F0E8`、左上に `#ECD3C8`、右下に `#E6CFA3` のぼかした円を置く（サイトのトップと同じ雰囲気）
+3. 大きく2行で配置
+   - 1行目 `Re:define`（Cormorant Garamond Italic / `#221A16`、「:」だけ `#B08D57`）
+   - 2行目 `Ordinary`（Cormorant Garamond / 文字は塗りなし・細い黒の縁取り）
+4. 右側に `hero-portrait.jpg` をアーチ型フレームで配置
+5. 右下に小さく `RE:ORDIA｜月に一度の美容イベント`
 
 ---
 
-## 画像の最適化（アップ前に推奨）
+## アップ前に
 
-- 横幅2400px以下、1枚あたり300KB前後を目安に圧縮（[Squoosh](https://squoosh.app) など）
-- ファイル名は上記のとおり半角小文字で
+- 横幅は最大2400px、1枚300KB前後に圧縮（[Squoosh](https://squoosh.app) など）
+- ファイル名は上表のとおり半角小文字で

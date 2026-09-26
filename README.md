@@ -10,6 +10,6 @@ Redefine Ordinary — 日常を再定義する美容イベント の公式サイ
 ## 公開前にやること
 
 1. `docs/image-prompts.md` に沿って画像を作成し `images/` に配置
-2. 公式LINE URL（https://lin.ee/PXLjVZ7）は設定済み。変更時は `index.html` と `js/main.js` の `LINE_URL` を更新
+2. 公式LINE URL（https://lin.ee/PXLjVZ7）は `index.html` 内のリンクに設定済み
 
 ブラウザで `index.html` を開けばそのまま確認できます。
