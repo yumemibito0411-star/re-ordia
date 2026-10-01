@@ -110,6 +110,7 @@
     typing: new Map(), // "cid:pid" -> Map(uid -> timer)
     typingEls: new Map(),
     ws: null,
+    swReg: null,
     wsRetries: 0,
     loggingOut: false,
   };
@@ -303,6 +304,10 @@
     const total = mine.reduce((n, c) => n + (c.isDm ? c.unread || c.mentions : c.mentions), 0);
     const anyUnread = mine.some((c) => c.unread);
     document.title = `${total ? `(${total}) ` : anyUnread ? '* ' : ''}${S.workspace}`;
+    // Number on the installed app's icon (desktop and Android).
+    try {
+      if (navigator.setAppBadge) (total ? navigator.setAppBadge(total) : navigator.clearAppBadge()).catch(() => {});
+    } catch { /* unsupported in this context */ }
   }
 
   // ---------------------------------------------------------------------------
@@ -1184,8 +1189,46 @@
     showPopover(anchor, h('div', { class: 'menu' },
       h('button', { type: 'button', onclick: () => { closePopover(); profileModal(); } }, 'プロフィールを編集'),
       'Notification' in window && Notification.permission === 'default'
-        ? h('button', { type: 'button', onclick: () => { closePopover(); Notification.requestPermission(); } }, 'デスクトップ通知を有効にする') : null,
+        ? h('button', { type: 'button', onclick: () => { closePopover(); Notification.requestPermission().catch(() => {}); } }, 'デスクトップ通知を有効にする') : null,
+      isStandalone() ? null : h('button', { type: 'button', onclick: () => { closePopover(); installApp(); } }, 'アプリとしてインストール'),
       h('button', { type: 'button', class: 'danger', onclick: logout }, 'ログアウト')));
+  }
+
+  // ---------------------------------------------------------------------------
+  // installable app (PWA)
+  // ---------------------------------------------------------------------------
+
+  let installPrompt = null;
+  const isStandalone = () => window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+
+  function setupPwa() {
+    if ('serviceWorker' in navigator && window.isSecureContext) {
+      navigator.serviceWorker.register('/sw.js').then((reg) => { S.swReg = reg; }).catch(() => {});
+    }
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      installPrompt = e;
+    });
+    window.addEventListener('appinstalled', () => {
+      installPrompt = null;
+      toast('アプリをインストールしました');
+    });
+  }
+
+  async function installApp() {
+    if (installPrompt) {
+      installPrompt.prompt();
+      await installPrompt.userChoice.catch(() => {});
+      installPrompt = null;
+      return;
+    }
+    const ios = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    const steps = ios
+      ? ['Safari でこのページを開きます', '画面下の共有ボタン（□↑）をタップします', '「ホーム画面に追加」を選び、「追加」をタップします']
+      : ['Chrome または Edge でこのページを開きます', 'アドレスバー右端のインストールアイコン（⊕ / 🖥）をクリックします', 'またはブラウザのメニューから「アプリをインストール」/「ホーム画面に追加」を選びます'];
+    openModal('アプリとしてインストール', h('div', {},
+      h('ol', { class: 'steps' }, steps.map((s) => h('li', {}, s))),
+      window.isSecureContext ? null : h('p', { class: 'form-error' }, 'インストールするには HTTPS で接続する必要があります（管理者に確認してください）。')));
   }
 
   async function logout() {
@@ -1305,7 +1348,13 @@
   function notify(m, c) {
     if (!('Notification' in window) || Notification.permission !== 'granted') return;
     const title = c.isDm ? user(m.userId).displayName : `${user(m.userId).displayName}（#${c.name}）`;
-    const n = new Notification(title, { body: m.body || (m.file ? `📎 ${m.file.name}` : ''), tag: `msg-${m.id}`, icon: '/favicon.svg' });
+    const options = { body: m.body || (m.file ? `📎 ${m.file.name}` : ''), tag: `msg-${m.id}`, icon: '/icons/icon-192.png', data: { url: `/#/c/${m.channelId}` } };
+    // Installed apps on Android only allow notifications through the service worker.
+    if (S.swReg) {
+      S.swReg.showNotification(title, options).catch(() => {});
+      return;
+    }
+    const n = new Notification(title, options);
     n.onclick = () => {
       window.focus();
       jumpToMessage(m);
@@ -1521,5 +1570,6 @@
     }
   }
 
+  setupPwa();
   init();
 })();

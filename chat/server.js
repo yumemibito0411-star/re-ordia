@@ -25,6 +25,7 @@ const STATIC_TYPES = {
   '.png': 'image/png',
   '.ico': 'image/x-icon',
   '.json': 'application/json; charset=utf-8',
+  '.webmanifest': 'application/manifest+json; charset=utf-8',
 };
 // Only these upload types are rendered inline by the browser; everything else is forced to download.
 const INLINE_FILE_TYPES = new Set(['image/png', 'image/jpeg', 'image/gif', 'image/webp']);
