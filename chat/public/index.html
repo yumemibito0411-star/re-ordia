@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>チャット</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <!-- Login / sign-up -->
+  <main id="auth" class="auth" hidden>
+    <div class="auth-card">
+      <div class="auth-logo" aria-hidden="true">#</div>
+      <h1 class="auth-title"><span data-workspace></span> にサインイン</h1>
+      <div class="auth-tabs" role="tablist">
+        <button type="button" role="tab" data-auth-tab="login" aria-selected="true">ログイン</button>
+        <button type="button" role="tab" data-auth-tab="signup" aria-selected="false">アカウント作成</button>
+      </div>
+      <form id="auth-form" class="form" novalidate>
+        <label class="field">
+          <span>ユーザー名</span>
+          <input name="username" autocomplete="username" required autocapitalize="none" spellcheck="false" placeholder="taro.yamada">
+        </label>
+        <label class="field" data-signup-only hidden>
+          <span>表示名</span>
+          <input name="displayName" autocomplete="name" placeholder="山田 太郎">
+        </label>
+        <label class="field">
+          <span>パスワード</span>
+          <input name="password" type="password" autocomplete="current-password" required placeholder="8文字以上">
+        </label>
+        <label class="field" data-signup-only data-invite hidden>
+          <span>招待コード</span>
+          <input name="inviteCode" autocomplete="off" placeholder="管理者から共有されたコード">
+        </label>
+        <p class="form-error" id="auth-error" role="alert"></p>
+        <button class="btn btn-primary btn-block" type="submit" id="auth-submit">ログイン</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Main app -->
+  <div id="app" class="app" hidden>
+    <header class="topbar">
+      <button class="icon-btn topbar-menu" id="sidebar-toggle" type="button" aria-label="メニュー">☰</button>
+      <form class="search" id="search-form" role="search">
+        <input id="search-input" type="search" placeholder="メッセージを検索" aria-label="メッセージを検索">
+      </form>
+      <button class="me-btn" id="me-btn" type="button" aria-label="プロフィール"></button>
+    </header>
+
+    <nav class="sidebar" id="sidebar" aria-label="チャンネル">
+      <div class="sidebar-head">
+        <span class="workspace-name" data-workspace></span>
+      </div>
+      <div class="sidebar-scroll">
+        <section class="sidebar-section">
+          <div class="sidebar-section-head">
+            <span>チャンネル</span>
+            <button class="icon-btn" type="button" id="browse-channels" title="チャンネル一覧" aria-label="チャンネル一覧">⌕</button>
+            <button class="icon-btn" type="button" id="new-channel" title="チャンネルを作成" aria-label="チャンネルを作成">＋</button>
+          </div>
+          <ul class="sidebar-list" id="channel-list"></ul>
+        </section>
+        <section class="sidebar-section">
+          <div class="sidebar-section-head">
+            <span>ダイレクトメッセージ</span>
+            <button class="icon-btn" type="button" id="new-dm" title="新しいメッセージ" aria-label="新しいメッセージ">＋</button>
+          </div>
+          <ul class="sidebar-list" id="dm-list"></ul>
+        </section>
+      </div>
+    </nav>
+
+    <main class="main" id="main">
+      <header class="channel-header">
+        <div class="channel-title">
+          <h2 id="channel-name"></h2>
+          <button class="channel-topic" id="channel-topic" type="button"></button>
+        </div>
+        <button class="btn btn-ghost" id="members-btn" type="button"></button>
+      </header>
+      <div class="messages" id="messages" tabindex="-1"></div>
+      <button class="jump-latest" id="jump-latest" type="button" hidden>最新のメッセージへ移動 ↓</button>
+      <div class="composer-area" id="composer-area"></div>
+    </main>
+
+    <aside class="panel" id="panel" hidden>
+      <header class="panel-header">
+        <h3 id="panel-title"></h3>
+        <button class="icon-btn" id="panel-close" type="button" aria-label="閉じる">✕</button>
+      </header>
+      <div class="panel-body" id="panel-body"></div>
+      <div class="panel-footer" id="panel-footer"></div>
+    </aside>
+
+    <div class="connection" id="connection" hidden>再接続しています…</div>
+  </div>
+
+  <div class="modal-backdrop" id="modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <header class="modal-header">
+        <h3 id="modal-title"></h3>
+        <button class="icon-btn" type="button" data-close aria-label="閉じる">✕</button>
+      </header>
+      <div class="modal-body" id="modal-body"></div>
+    </div>
+  </div>
+
+  <div class="popover" id="popover" hidden></div>
+  <div class="toast" id="toast" role="status" hidden></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

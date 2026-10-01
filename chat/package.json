@@ -1,0 +1,17 @@
+{
+  "name": "re-ordia-chat",
+  "version": "1.0.0",
+  "private": true,
+  "description": "社内向けリアルタイムチャット（Slack ライク）",
+  "main": "server.js",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server.js",
+    "test": "node --disable-warning=ExperimentalWarning --test test/*.test.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}

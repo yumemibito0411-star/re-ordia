@@ -40,3 +40,8 @@ assets/img/             画像素材（Canva で生成）
 python3 -m http.server 8000
 # → http://localhost:8000
 ```
+
+## 社内チャット（`chat/`）
+
+Slack ライクな社内向けリアルタイムチャットを `chat/` に同梱しています。
+Node.js サーバーが必要なため GitHub Pages では動きません。起動方法は [`chat/README.md`](chat/README.md) を参照してください。
